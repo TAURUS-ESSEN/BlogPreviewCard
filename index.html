@@ -5,30 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Frontend Mentor | Blog preview card</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+<style type="text/tailwindcss">
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
+    @font-face {
+      font-family: "Figtree";
+      src: url("./assets/fonts/Figtree-VariableFont_wght.ttf")
+      format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @theme {
+      --color-yellow: hsl(47, 88%, 63%);
+      --color-gray-500: hsl(0, 0%, 42%);
+      --color-gray-950: hsl(0, 0%, 7%);
+      --color-white: hsl(0, 0%, 100%);
+      --shadow-medium: 8px 8px 0 #000;
+      --shadow-hard: 16px 16px 0 #000;
+      
+
+      --spacing-300: 24px;
+      --spacing-150: 12px;
+      --spacing-100: 8px;
+      --spacing-50:  4px;
+    }
+
+      @layer base {
+        body {
+          @apply min-h-screen grid place-items-center text-gray-950 bg-yellow ;
+        }
+      }
+
+      @layer utilities {
+        .text-preset-1 {
+          font-family: "Figtree", sans-serif;
+          font-size: 24px;
+          font-weight: 800;
+          line-height: 150%;
+          letter-spacing: 0;
+        }
+        
+        .text-preset-2 {
+          font-family: "Figtree", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 150%;
+          letter-spacing: 0;
+        }
+        
+        .text-preset-3 {
+          font-family: "Figtree", sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 150%;
+          letter-spacing: 0;
+        }
+        
+        .text-preset-3-extrabold {
+          font-family: "Figtree", sans-serif;
+          font-size: 14px;
+          font-weight: 900;
+          line-height: 150%;
+          letter-spacing: 0;
+        }       
+      }
+    </style>
 </head>
 <body>
+  <div class="m-auto max-w-[327px] md:max-w-[384px] flex flex-col p-6 gap-(--spacing-300) bg-white border border-black rounded-[20px] duration-300 shadow-medium hover:shadow-hard">
+    <img src="./assets/images/illustration-article.svg" class="rounded-[10px]" />
+    <div class="flex flex-col gap-(--spacing-150)">
+      <div class="w-auto self-start text-preset-3-extrabold px-3 py-1 bg-[#F4D04E] rounded-sm">Learning</div>
 
-  Learning
+      <p class="text-preset-3">Published 21 Dec 2023</p>
 
-  Published 21 Dec 2023
+      <h1 class="text-preset-1 hover:text-yellow">HTML & CSS foundations</h1>
 
-  HTML & CSS foundations
+      <p class="text-preset-2 text-gray-500">These languages are the backbone of every website, defining structure, content, and presentation.</p>
 
-  These languages are the backbone of every website, defining structure, content, and presentation.
+      <div class="flex items-center gap-(--spacing-150)"><img src="./assets/images/image-avatar.webp" width="32" height="32" /><span class="text-preset-3-extrabold">Greg Hooper</span></div>
+      
 
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    </div>
   </div>
+        <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/TAURUS-ESSEN" target="_blank">Taurus aus Essen</a>.
+      </div>
 </body>
 </html>
